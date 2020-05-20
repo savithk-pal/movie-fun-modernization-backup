@@ -38,13 +38,13 @@ public class AlbumsController {
     @GetMapping
     public String index(Map<String, Object> model) {
         model.put("albums", albumsBean.getAlbums());
-        return "albums";
+        return "WEB-INF/albums.jsp";
     }
 
     @GetMapping("/{albumId}")
     public String details(@PathVariable long albumId, Map<String, Object> model) {
         model.put("album", albumsBean.find(albumId));
-        return "albumDetails";
+        return "WEB-INF/albumDetails.jsp";
     }
 
     @PostMapping("/{albumId}/cover")
